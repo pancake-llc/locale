@@ -1,0 +1,24 @@
+{
+  "name": "com.snorlax.locale",
+  "displayName": "Locale",
+  "description": "Provide way get locale for Unity",
+  "version": "1.0.0",
+  "unity": "2019.1",
+  "category": "snorlax",
+  "author": {
+    "name": "yenmoc",
+    "email": "phongsoyenmoc.diep@gmail.com",
+    "url": "https://github.com/yenmoc"
+  },
+  "license": "MIT",
+  "keywords": ["region","language", "locale"],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:snorluxe/locale.git",
+    "directory": "com.snorlax.locale"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@snorluxe"
+  }
+}
