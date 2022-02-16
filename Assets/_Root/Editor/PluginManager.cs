@@ -24,7 +24,7 @@ namespace Snorlax.LocaleEditor
             if (Path.GetFileName(assetPath).Equals(Path.GetFileName(ImportPackage.PATH_INSTALL)) || File.Exists(ImportPackage.PATH_INSTALL))
                 EditorPrefs.DeleteKey(Application.identifier + ".locale");
 
-            return AssetDeleteResult.DidDelete;
+            return AssetDeleteResult.DidNotDelete;
         }
     }
 }
