@@ -1,4 +1,5 @@
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -21,10 +22,26 @@ namespace Snorlax.LocaleEditor
     {
         private static AssetDeleteResult OnWillDeleteAsset(string assetPath, RemoveAssetOptions options)
         {
-            if (Path.GetFileName(assetPath).Equals(Path.GetFileName(ImportPackage.PATH_INSTALL)) || File.Exists(ImportPackage.PATH_INSTALL))
+            if (Path.GetFileName(assetPath).Equals(Path.GetFileName(ImportPackage.PATH_INSTALL)) || assetPath.Equals("Assets/Plugins/Locale") ||
+                assetPath.Equals("Assets/Plugins") || CheckFolderContainLocale(assetPath))
+            {
                 EditorPrefs.DeleteKey(Application.identifier + ".locale");
+            }
 
             return AssetDeleteResult.DidNotDelete;
+        }
+
+        private static bool CheckFolderContainLocale(string path)
+        {
+            var flag = false;
+            var result = path.Split('/').ToList();
+
+            foreach (string s in result)
+            {
+                if (s.Equals("Locale")) flag = true;
+            }
+
+            return flag;
         }
     }
 }
