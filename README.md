@@ -9,7 +9,7 @@ Add
 
 - for excactly version
 ```csharp
-"com.snorlax.locale": "https://github.com/snorluxe/locale.git?path=Assets/_Root#1.0.0",
+"com.snorlax.locale": "https://github.com/snorluxe/locale.git?path=Assets/_Root#1.0.2",
 ```
 
 To `Packages/manifest.json`
