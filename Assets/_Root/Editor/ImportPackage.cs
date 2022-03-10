@@ -11,9 +11,9 @@ namespace Snorlax.LocaleEditor
 
     public static class ImportPackage
     {
-        private const string PACKAGE_PATH = "Assets/_Root/Packages/pack.unitypackage";
+        private const string PACKAGE_PATH = "Assets/_Root/Packages/locale-package.unitypackage";
         internal const string PATH_INSTALL = "Assets/Plugins/Locale/PreciseLocale.cs";
-        private const string PACKAGE_UPM_PATH = "Packages/com.snorlax.locale/Packages/pack.unitypackage";
+        private const string PACKAGE_UPM_PATH = "Packages/com.snorlax.locale/Packages/locale-package.unitypackage";
         private const string LOCALE_NAMESPACE = "Snorlax.Locale";
         private const string LOCALE_CLASS = "PreciseLocale";
 

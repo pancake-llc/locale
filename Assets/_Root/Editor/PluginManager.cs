@@ -8,7 +8,18 @@ namespace Snorlax.LocaleEditor
     [InitializeOnLoad]
     public class PluginManager : AssetPostprocessor
     {
-        static PluginManager() { EditorApplication.update += Initialize; }
+        static PluginManager()
+        {
+            EditorApplication.update += Initialize;
+            
+            AssetDatabase.importPackageCompleted += _ =>
+            {
+                if (_.ToLower().Equals("locale-package"))
+                {
+                    ScriptingDefinition1.AddDefineSymbolOnAllPlatforms("PANCAKE_LOCALE");
+                }
+            };
+        }
 
         private static void Initialize()
         {
@@ -26,6 +37,7 @@ namespace Snorlax.LocaleEditor
                 assetPath.Equals("Assets/Plugins") || CheckFolderContainLocale(assetPath))
             {
                 EditorPrefs.DeleteKey(Application.identifier + ".locale");
+                ScriptingDefinition1.RemoveDefineSymbolOnAllPlatforms("PANCAKE_LOCALE");
             }
 
             return AssetDeleteResult.DidNotDelete;
